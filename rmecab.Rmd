@@ -32,3 +32,4 @@ res2.pc <- princomp (t (res2))
 biplot (res2.pc)
 ```
 このプロジェクトは以下に公開しています
+https://github.com/ishida-m/RStudioGit.git
