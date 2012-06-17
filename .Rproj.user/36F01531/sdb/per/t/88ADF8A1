@@ -1,0 +1,16 @@
+{
+    "contents" : "RMeCabパッケージとは\n========================================================\nRMeCabは日本語形態素解析である MeCab とRを接続するインターフェイスです．RMeCabは以下からダウンロードすることができます．\n\nhttp://rmecab.jp/wiki/index.php?RMeCab\n\nRMeCabを試す\n-------------------------\n\n```{r loadLibrary}\n# RMeCab を利用する準備\nlibrary (RMeCab)\n```\n\n### 文字を単位としたNgram(bigram)を生成\n```{r Ngram}\n# 鴎外と漱石それぞれ4作品を含むフォルダを指定\nres <- docNgram (\"D:/fromC/data/writers\", type = 0) # writers はフォルダ名\n\nres2 <- res[ rownames(res) %in% c(\"[と-、]\", \"[て-、]\", \n                                  \"[は-、]\", \"[が-、]\", \n                                  \"[で-、]\",  \"[に-、]\",  \n                                  \"[ら-、]\",  \"[も-、]\" ) ,  ]\nres2\nres2.pc <- princomp (t (res2))\n\n```\n\n### 主成分分析によるバイプロット\n\n```{r plot}\nbiplot (res2.pc)\n```\nこのプロジェクトは以下に公開しています",
+    "created" : 1339915519307.000,
+    "dirty" : false,
+    "encoding" : "CP932",
+    "folds" : "",
+    "hash" : "511041449",
+    "id" : "88ADF8A1",
+    "lastKnownWriteTime" : 1339915936,
+    "path" : "~/RStudioGit/rmecab.Rmd",
+    "properties" : {
+        "tempName" : "Untitled1"
+    },
+    "source_on_save" : false,
+    "type" : "r_markdown"
+}
